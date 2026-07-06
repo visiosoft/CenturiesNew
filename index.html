@@ -39,6 +39,70 @@ section[id]{ scroll-margin-top:82px; }
 .cc-field:focus { border-color:#E4B62A; }
 select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
 .cc-row:hover .cc-row-ic { background:#E4B62A; color:#12343C; }
+/* Scroll reveal */
+.cc-reveal { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-reveal.in { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { .cc-reveal { opacity:1; transform:none; transition:none; } }
+
+/* Gallery filter chips */
+.cc-chip { font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#4B5B5E; background:transparent; border:1px solid rgba(18,52,60,.25); border-radius:999px; padding:10px 20px; cursor:pointer; transition:background .3s,color .3s,border-color .3s; }
+.cc-chip:hover { border-color:#12343C; color:#12343C; }
+.cc-chip.on { background:#12343C; color:#F5F1E9; border-color:#12343C; }
+
+/* WhatsApp float */
+#cc-wa { position:fixed; right:26px; bottom:26px; z-index:90; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 28px rgba(14,42,49,.35); transition:transform .3s cubic-bezier(.2,.7,.2,1), box-shadow .3s; }
+#cc-wa:hover { transform:scale(1.1); box-shadow:0 12px 34px rgba(14,42,49,.45); }
+#cc-wa svg { width:30px; height:30px; fill:#fff; }
+
+/* Designed in 3D — render strip + build steps */
+.cc-strip { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:14px; scrollbar-width:thin; scrollbar-color:rgba(245,241,233,.3) transparent; }
+.cc-strip a { flex:0 0 auto; scroll-snap-align:start; display:block; height:250px; border-radius:3px; overflow:hidden; }
+.cc-strip img { height:100%; width:auto; display:block; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-strip a:hover img { transform:scale(1.06); }
+.cc-step { display:grid; grid-template-columns:52px 1fr; gap:18px; padding:20px 0; border-top:1px solid rgba(245,241,233,.16); }
+.cc-step:hover .cc-step-i { color:#E4B62A; }
+
+/* Paper grain */
+body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:none; opacity:.032; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* Intro reveal */
+#cc-intro { position:fixed; inset:0; z-index:300; background:#12343C; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; transition:opacity .6s ease, visibility .6s; }
+#cc-intro.done { opacity:0; visibility:hidden; }
+#cc-intro img { height:52px; width:auto; filter:brightness(0) invert(1); animation:introRise .9s cubic-bezier(.2,.7,.2,1) both .15s; }
+#cc-intro .cc-intro-line { width:120px; height:2px; background:#E4B62A; transform-origin:left; animation:introLine .8s cubic-bezier(.2,.7,.2,1) both .5s; }
+#cc-intro span { font-family:'Archivo',sans-serif; font-size:10.5px; letter-spacing:.3em; text-transform:uppercase; color:#B9C4C4; animation:introRise .9s cubic-bezier(.2,.7,.2,1) both .45s; }
+@keyframes introRise { from { opacity:0; transform:translateY(16px);} to { opacity:1; transform:none;} }
+@keyframes introLine { from { transform:scaleX(0);} to { transform:scaleX(1);} }
+@media (prefers-reduced-motion: reduce){ #cc-intro { display:none; } }
+
+/* Communities marquee */
+.cc-marq { overflow:hidden; border-top:1px solid rgba(18,52,60,.12); border-bottom:1px solid rgba(18,52,60,.12); padding:22px 0; }
+.cc-marq-track { display:inline-flex; white-space:nowrap; animation:marq 36s linear infinite; will-change:transform; }
+.cc-marq:hover .cc-marq-track { animation-play-state:paused; }
+.cc-marq-track > span { display:inline-flex; align-items:center; gap:26px; padding-right:26px; font-family:'Instrument Serif',serif; font-size:23px; color:#12343C; }
+.cc-marq-track em { font-style:normal; color:#E4B62A; font-size:14px; }
+@keyframes marq { from { transform:translateX(0);} to { transform:translateX(-50%);} }
+@media (prefers-reduced-motion: reduce){ .cc-marq-track { animation:none; } }
+
+/* Custom gallery cursor */
+#cc-cursor { position:fixed; left:0; top:0; z-index:150; width:78px; height:78px; border-radius:50%; background:#E4B62A; color:#12343C; display:flex; align-items:center; justify-content:center; font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.08em; text-transform:uppercase; pointer-events:none; transform:translate(-50%,-50%) scale(0); transition:transform .25s cubic-bezier(.2,.7,.2,1); }
+#cc-cursor.on { transform:translate(-50%,-50%) scale(1); }
+@media (hover:none){ #cc-cursor { display:none; } }
+
+/* WhatsApp phone mockup */
+.cc-phone { width:330px; max-width:100%; margin:0 auto; background:#0E2A31; border-radius:38px; padding:12px; box-shadow:0 30px 70px rgba(14,42,49,.28); }
+.cc-phone-scr { background:#E7DFD4; border-radius:28px; overflow:hidden; }
+.cc-phone-hd { display:flex; align-items:center; gap:11px; background:#12343C; color:#F5F1E9; padding:13px 15px; }
+.cc-phone-hd img { width:34px; height:34px; border-radius:50%; background:#F5F1E9; object-fit:contain; padding:4px; box-sizing:border-box; }
+.cc-phone-hd b { display:block; font-size:13.5px; font-weight:600; font-family:'Archivo',sans-serif; }
+.cc-phone-hd i { display:block; font-style:normal; font-size:10.5px; color:#9fd3c7; margin-top:1px; }
+.cc-phone-bd { padding:14px 12px 18px; display:flex; flex-direction:column; gap:10px; }
+.cc-bub { background:#fff; border-radius:10px; border-top-left-radius:2px; padding:5px; max-width:88%; box-shadow:0 1px 1px rgba(14,42,49,.12); }
+.cc-bub img { width:100%; height:120px; object-fit:cover; border-radius:7px; display:block; }
+.cc-bub p { font-family:'Archivo',sans-serif; font-size:12px; line-height:1.45; color:#222e30; margin:7px 4px 3px; }
+.cc-bub .cc-bub-t { display:block; text-align:right; font-size:9.5px; color:#8aa0a0; margin:0 4px 2px; }
+.cc-bub .cc-bub-t em { font-style:normal; color:#53bdeb; }
+
 /* Project gallery */
 .cc-proj { cursor:pointer; }
 .cc-proj .cc-proj-count { opacity:0; transition:opacity .35s; }
@@ -51,7 +115,7 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
 #cc-lightbox .lb-close { background:none; border:1px solid rgba(245,241,233,.35); color:#F5F1E9; font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase; padding:10px 18px; border-radius:2px; cursor:pointer; transition:background .3s,color .3s; }
 #cc-lightbox .lb-close:hover { background:#F5F1E9; color:#12343C; }
 #cc-lightbox .lb-stage { flex:1; display:flex; align-items:center; justify-content:center; min-height:0; padding:0 84px; }
-#cc-lightbox .lb-stage img { max-width:100%; max-height:100%; object-fit:contain; border-radius:2px; }
+#cc-lightbox .lb-stage img, #cc-lightbox .lb-stage video { max-width:100%; max-height:100%; object-fit:contain; border-radius:2px; }
 #cc-lightbox .lb-nav { position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%; border:1px solid rgba(245,241,233,.35); background:rgba(14,42,49,.5); color:#F5F1E9; font-size:20px; cursor:pointer; transition:background .3s,color .3s; }
 #cc-lightbox .lb-nav:hover { background:#E4B62A; color:#12343C; border-color:#E4B62A; }
 #cc-lightbox .lb-prev { left:20px; }
@@ -74,6 +138,17 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
 </style>
 </head>
 <body>
+
+<!-- INTRO -->
+<div id="cc-intro" aria-hidden="true">
+  <img src="assets/logo.png" alt="">
+  <div class="cc-intro-line"></div>
+  <span>Built to last a century</span>
+</div>
+<script>
+  // skip intro on repeat views this session
+  if (sessionStorage.getItem('ccIntroSeen')) document.getElementById('cc-intro').style.display = 'none';
+</script>
 
 <div style="font-family:'Archivo',sans-serif; color:#12343C; background:#F5F1E9; overflow-x:hidden;">
 
@@ -121,6 +196,13 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
       </div>
     </div>
   </section>
+
+  <!-- COMMUNITIES MARQUEE -->
+  <div class="cc-marq" aria-label="Communities we build in">
+    <div class="cc-marq-track" id="cc-marq-track">
+      <span>Arabian Ranches <em>✦</em> Damac Hills <em>✦</em> Jumeirah <em>✦</em> Jumeirah Park <em>✦</em> JBR <em>✦</em> Dubai Hills <em>✦</em> Al Barsha <em>✦</em> Nad Al Shiba <em>✦</em> Madinat Hind <em>✦</em> Wadi El Amardi <em>✦</em> Business Bay <em>✦</em> </span>
+    </div>
+  </div>
 
   <!-- POSITIONING -->
   <section style="background:#12343C; color:#F5F1E9;">
@@ -179,7 +261,48 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
         </div>
         <a class="cc-navlink" href="#contact" style="text-decoration:none; color:#4B5B5E; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;">Enquire →</a>
       </div>
+      <div id="cc-filters" style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:36px;"></div>
       <div id="cc-gallery" class="cc-gallerygrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:36px 24px;"></div>
+    </div>
+  </section>
+
+  <!-- DESIGNED IN 3D, BUILT IN-HOUSE -->
+  <section id="how-we-build" style="background:#12343C; color:#F5F1E9;">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+      <div class="cc-two" style="display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:center;">
+        <div>
+          <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#E4B62A;">How we work</span>
+          <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:50px; line-height:1.05; letter-spacing:-.01em; margin:16px 0 0;">Designed in <span style="font-style:italic; color:#E4B62A;">3D</span>. Built in-house.</h2>
+          <p style="font-size:15px; line-height:1.8; color:#B9C4C4; margin:24px 0 34px; max-width:52ch;">You approve a photoreal 3D design before a single wall moves — then our own crews build exactly that. Below is our Arabian Ranches villa, filmed on site by our team.</p>
+          <div class="cc-step">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#7A8688; transition:color .3s;">01</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:24px;">Survey &amp; 3D design</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#B9C4C4; margin-top:5px;">Laser-accurate site survey, then room-by-room renders you sign off on.</span></span>
+          </div>
+          <div class="cc-step">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#7A8688; transition:color .3s;">02</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:24px;">Authority approvals</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#B9C4C4; margin-top:5px;">RTA, DM and Civil Defence permits handled by us, before work starts.</span></span>
+          </div>
+          <div class="cc-step">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#7A8688; transition:color .3s;">03</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:24px;">In-house build</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#B9C4C4; margin-top:5px;">Structure, MEP, joinery and stone by our own crews — no subcontractor roulette.</span></span>
+          </div>
+          <div class="cc-step" style="border-bottom:1px solid rgba(245,241,233,.16);">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#7A8688; transition:color .3s;">04</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:24px;">Handover</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#B9C4C4; margin-top:5px;">Snag-free finish, on the date we agreed — built to last a century.</span></span>
+          </div>
+        </div>
+        <div class="cc-vids" style="position:relative; height:640px;">
+          <div style="position:absolute; inset:0; overflow:hidden; border-radius:3px;">
+            <video src="projects/Arabian%20Ranches/2nd%20Reel%20SHORT.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+          </div>
+          <span style="position:absolute; left:16px; bottom:16px; background:rgba(14,42,49,.78); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:#F5F1E9; padding:8px 13px; border-radius:2px;">On site — Arabian Ranches</span>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:12px; margin:70px 0 22px;">
+        <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#E4B62A;">The 3D we design to</span>
+        <span style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7A8688;">Arabian Ranches Villa — interior renders · drag to browse</span>
+      </div>
+      <div id="cc-strip" class="cc-strip"></div>
     </div>
   </section>
 
@@ -207,19 +330,19 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
     <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:100px 40px;">
       <div class="cc-vals" style="display:grid; grid-template-columns:repeat(4,1fr); gap:28px;">
         <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
-          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">9</div>
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;"><span class="cc-stat-n" data-n="9">9</span></div>
           <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Years in business</div>
         </div>
         <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
-          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">50<span style="color:#E4B62A;">+</span></div>
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;"><span class="cc-stat-n" data-n="50">50</span><span style="color:#E4B62A;">+</span></div>
           <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Projects completed</div>
         </div>
         <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
-          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">100<span style="color:#E4B62A;">%</span></div>
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;"><span class="cc-stat-n" data-n="100">100</span><span style="color:#E4B62A;">%</span></div>
           <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">In-house delivery</div>
         </div>
         <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
-          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">6</div>
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;"><span class="cc-stat-n" data-n="6">6</span></div>
           <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Core disciplines</div>
         </div>
       </div>
@@ -250,6 +373,61 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
         <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#B08A12;">04</div>
         <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; margin:14px 0 10px;">Fixed, honest pricing</h3>
         <p style="font-size:14px; line-height:1.7; color:#4B5B5E; margin:0;">A clear proposal up front and no invented extras later. What we quote is what you pay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRANSPARENCY -->
+  <section style="background:#ffffff; border-top:1px solid rgba(18,52,60,.1);">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+      <div class="cc-two" style="display:grid; grid-template-columns:1.15fr 1fr; gap:80px; align-items:center;">
+        <div>
+          <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">No surprises</span>
+          <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:54px; line-height:1.05; letter-spacing:-.015em; color:#12343C; margin:16px 0 0; max-width:16ch;">You'll never wonder what's happening <span style="font-style:italic; color:#B08A12;">on site</span>.</h2>
+          <p style="font-size:15.5px; line-height:1.8; color:#4B5B5E; margin:26px 0 36px; max-width:50ch;">Most contractors go quiet the day you sign. We do the opposite — we photograph and film every stage of your project and send it to you as it happens.</p>
+          <div class="cc-step" style="border-top-color:rgba(18,52,60,.14);">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#B08A12;">✓</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:23px; color:#12343C;">Weekly photo report on WhatsApp</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#4B5B5E; margin-top:5px;">Progress photos of your site, every week, without asking.</span></span>
+          </div>
+          <div class="cc-step" style="border-top-color:rgba(18,52,60,.14);">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#B08A12;">✓</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:23px; color:#12343C;">A site engineer who answers</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#4B5B5E; margin-top:5px;">One dedicated contact for your whole project — not a call center.</span></span>
+          </div>
+          <div class="cc-step" style="border-top-color:rgba(18,52,60,.14); border-bottom:1px solid rgba(18,52,60,.14);">
+            <span class="cc-step-i" style="font-family:'Instrument Serif',serif; font-size:18px; color:#B08A12;">✓</span>
+            <span><span style="display:block; font-family:'Instrument Serif',serif; font-size:23px; color:#12343C;">Every stage documented</span><span style="display:block; font-size:13.5px; line-height:1.6; color:#4B5B5E; margin-top:5px;">From excavation to handover — you get the full photo archive of your build.</span></span>
+          </div>
+          <a class="cc-btn-dark" href="#contact" style="display:inline-block; text-decoration:none; background:#12343C; color:#F5F1E9; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; padding:16px 28px; border-radius:2px; transition:background .3s; margin-top:36px;">Start your project</a>
+        </div>
+        <div class="cc-phone cc-reveal">
+          <div class="cc-phone-scr">
+            <div class="cc-phone-hd">
+              <img src="assets/logo.png" alt="">
+              <span><b>Centuries — Site Updates</b><i>online</i></span>
+            </div>
+            <div class="cc-phone-bd">
+              <div class="cc-bub">
+                <img loading="lazy" src="projects/Arabian%20Ranches/WhatsApp%20Image%202026-06-15%20at%206.17.13%20PM%20(1).jpeg" alt="Pool shell concrete works">
+                <p>Week 9 — pool shell cast &amp; waterproofing started ✓</p>
+                <span class="cc-bub-t">10:42 <em>✓✓</em></span>
+              </div>
+              <div class="cc-bub">
+                <img loading="lazy" src="projects/Arabian%20Ranches/WhatsApp%20Image%202026-06-15%20at%206.38.19%20PM.jpeg" alt="Marble installation">
+                <p>Week 21 — Port Laurent marble going up in the master bath</p>
+                <span class="cc-bub-t">09:15 <em>✓✓</em></span>
+              </div>
+              <div class="cc-bub">
+                <img loading="lazy" src="projects/Arabian%20Ranches/WhatsApp%20Image%202026-06-15%20at%206.38.26%20PM%20(1).jpeg" alt="Ceiling works">
+                <p>Week 26 — ceiling grid closed, painting starts Sunday</p>
+                <span class="cc-bub-t">16:03 <em>✓✓</em></span>
+              </div>
+              <div class="cc-bub">
+                <p style="margin-top:3px;">All DM inspections passed today. Full photo set in your shared folder 📁</p>
+                <span class="cc-bub-t">16:05 <em>✓✓</em></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -360,13 +538,21 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
 
 </div>
 
+<!-- GALLERY CURSOR -->
+<div id="cc-cursor" aria-hidden="true">View →</div>
+
+<!-- WHATSAPP -->
+<a id="cc-wa" href="https://wa.me/971567601154?text=Hello%20Centuries%20Contracting%2C%20I%27d%20like%20a%20quote%20for%20my%20project." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.04 3C9.4 3 4 8.36 4 14.96c0 2.63.87 5.07 2.34 7.05L4.8 27.2l5.36-1.5a12.1 12.1 0 0 0 5.88 1.5c6.63 0 12.03-5.36 12.03-11.96S22.67 3 16.04 3zm0 21.85c-1.98 0-3.83-.58-5.38-1.58l-.38-.24-3.18.89.91-3.06-.25-.4a9.77 9.77 0 0 1-1.55-5.5c0-5.42 4.44-9.83 9.9-9.83 5.45 0 9.89 4.4 9.89 9.83s-4.44 9.89-9.96 9.89zm5.43-7.4c-.3-.15-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.88-.78-1.48-1.75-1.65-2.04-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.07-.13-.27-.2-.57-.35z"/></svg>
+</a>
+
 <!-- LIGHTBOX -->
 <div id="cc-lightbox" role="dialog" aria-modal="true" aria-label="Project gallery">
   <div class="lb-top">
     <div><span class="lb-title"></span><span class="lb-cat"></span></div>
     <button type="button" class="lb-close">Close ✕</button>
   </div>
-  <div class="lb-stage"><img alt=""></div>
+  <div class="lb-stage"><img alt=""><video controls playsinline style="display:none;"></video></div>
   <button type="button" class="lb-nav lb-prev" aria-label="Previous photo">←</button>
   <button type="button" class="lb-nav lb-next" aria-label="Next photo">→</button>
   <div class="lb-count"></div>
@@ -374,32 +560,70 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
 
 <script src="assets/projects-data.js"></script>
 <script>
-// Project gallery from projects/ folder + lightbox
+// Project gallery from projects/ folder: filters + lightbox with photos & videos
 (function () {
   var grid = document.getElementById('cc-gallery');
+  var filters = document.getElementById('cc-filters');
   var lb = document.getElementById('cc-lightbox');
   var lbImg = lb.querySelector('.lb-stage img');
+  var lbVid = lb.querySelector('.lb-stage video');
   var lbTitle = lb.querySelector('.lb-title');
   var lbCat = lb.querySelector('.lb-cat');
   var lbCount = lb.querySelector('.lb-count');
   var cur = { p: 0, i: 0 };
 
-  (window.CC_PROJECTS || []).forEach(function (p, pi) {
+  var projects = (window.CC_PROJECTS || []).map(function (p) {
+    return {
+      title: p.title,
+      category: p.category,
+      media: p.images.map(function (s) { return { src: s, video: false }; })
+        .concat((p.videos || []).map(function (s) { return { src: s, video: true }; }))
+    };
+  });
+
+  // filter chips
+  var cats = ['All'];
+  projects.forEach(function (p) { if (cats.indexOf(p.category) < 0) cats.push(p.category); });
+  cats.forEach(function (c, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'cc-chip' + (i === 0 ? ' on' : '');
+    b.textContent = c;
+    b.addEventListener('click', function () {
+      filters.querySelectorAll('.cc-chip').forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      grid.querySelectorAll('.cc-proj').forEach(function (card) {
+        var hit = c === 'All' || card.dataset.cat === c;
+        card.style.display = hit ? 'block' : 'none';
+        if (hit) {
+          card.classList.remove('in');
+          requestAnimationFrame(function () { requestAnimationFrame(function () { card.classList.add('in'); }); });
+        }
+      });
+    });
+    filters.appendChild(b);
+  });
+
+  projects.forEach(function (p, pi) {
+    var vids = p.media.filter(function (m) { return m.video; }).length;
+    var imgs = p.media.length - vids;
+    var badge = 'View ' + imgs + ' photos' + (vids ? ' · ' + vids + ' videos' : '');
     var card = document.createElement('a');
-    card.className = 'cc-proj';
+    card.className = 'cc-proj cc-reveal in';
     card.href = '#';
+    card.dataset.cat = p.category;
     card.style.cssText = 'text-decoration:none; color:inherit; display:block;';
     card.innerHTML =
       '<div style="height:320px; border-radius:3px; overflow:hidden; background:#d8d0bf; position:relative;">' +
         '<img loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">' +
-        '<span class="cc-proj-count" style="position:absolute; right:12px; bottom:12px; background:rgba(14,42,49,.78); color:#F5F1E9; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:7px 12px; border-radius:2px;">View ' + p.images.length + ' photos</span>' +
+        '<span class="cc-proj-count" style="position:absolute; right:12px; bottom:12px; background:rgba(14,42,49,.78); color:#F5F1E9; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:7px 12px; border-radius:2px;">' + badge + '</span>' +
       '</div>' +
       '<div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:14px;">' +
         '<span class="cc-proj-t" style="font-family:\'Instrument Serif\',serif; font-size:23px; transition:color .3s;"></span>' +
         '<span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; flex:0 0 auto;"></span>' +
       '</div>';
     var img = card.querySelector('img');
-    img.src = encodeURI(p.images[0]);
+    img.src = encodeURI(p.media[0].src);
     img.alt = p.title;
     card.querySelector('.cc-proj-t').textContent = p.title;
     card.querySelector('div + div span:last-child').textContent = p.category;
@@ -407,13 +631,25 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
     grid.appendChild(card);
   });
 
+  function stopVid() { lbVid.pause(); lbVid.removeAttribute('src'); lbVid.load(); }
   function show() {
-    var p = window.CC_PROJECTS[cur.p];
-    lbImg.src = encodeURI(p.images[cur.i]);
-    lbImg.alt = p.title + ' — photo ' + (cur.i + 1);
+    var p = projects[cur.p];
+    var m = p.media[cur.i];
+    if (m.video) {
+      lbImg.style.display = 'none';
+      lbVid.style.display = 'block';
+      lbVid.src = encodeURI(m.src);
+      lbVid.play().catch(function () {});
+    } else {
+      stopVid();
+      lbVid.style.display = 'none';
+      lbImg.style.display = 'block';
+      lbImg.src = encodeURI(m.src);
+      lbImg.alt = p.title + ' — ' + (cur.i + 1);
+    }
     lbTitle.textContent = p.title;
-    lbCat.textContent = p.category;
-    lbCount.textContent = (cur.i + 1) + ' / ' + p.images.length;
+    lbCat.textContent = p.category + (m.video ? ' · video' : '');
+    lbCount.textContent = (cur.i + 1) + ' / ' + p.media.length;
   }
   function open(pi, ii) {
     cur = { p: pi, i: ii };
@@ -423,11 +659,12 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
   }
   function close() {
     lb.classList.remove('open');
+    stopVid();
     lbImg.src = '';
     document.body.style.overflow = '';
   }
   function step(d) {
-    var n = window.CC_PROJECTS[cur.p].images.length;
+    var n = projects[cur.p].media.length;
     cur.i = (cur.i + d + n) % n;
     show();
   }
@@ -441,6 +678,62 @@ select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
     else if (e.key === 'ArrowLeft') step(-1);
     else if (e.key === 'ArrowRight') step(1);
   });
+
+  // 3D render strip — clicking a render opens it in the project lightbox
+  var strip = document.getElementById('cc-strip');
+  if (strip && projects.length) {
+    var renders = [
+      '3D/Kitchen01.jpg', '3D/004-Dining 01.jpg', '3D/Majlis01.jpg', '3D/great room01.jpg',
+      '3D/Master Bedroom 001 option B+ (1).jpg', '3D/entrance.jpg', '3D/Study Room 01.jpg', '3D/family room.jpg'
+    ].map(function (s) { return 'projects/Arabian Ranches/' + s; });
+    renders.forEach(function (src) {
+      var idx = -1;
+      projects[0].media.some(function (m, i) { if (m.src === src) { idx = i; return true; } return false; });
+      var a = document.createElement('a');
+      a.href = '#';
+      a.innerHTML = '<img loading="lazy" alt="3D interior render">';
+      a.querySelector('img').src = encodeURI(src);
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (idx >= 0) open(0, idx);
+      });
+      strip.appendChild(a);
+    });
+  }
+})();
+
+// Scroll reveal for section content
+(function () {
+  var targets = document.querySelectorAll('section .cc-two, section .cc-vals, section .cc-servgrid, #cc-filters, footer .cc-three, #contact h2, #about h2');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+  targets.forEach(function (t) { t.classList.add('cc-reveal'); io.observe(t); });
+})();
+
+// Animated stat counters
+(function () {
+  var nums = document.querySelectorAll('.cc-stat-n');
+  if (!nums.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      io.unobserve(en.target);
+      var el = en.target;
+      var target = parseInt(el.dataset.n, 10);
+      var t0 = null;
+      function tick(t) {
+        if (!t0) t0 = t;
+        var k = Math.min((t - t0) / 1400, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.4 });
+  nums.forEach(function (n) { io.observe(n); });
 })();
 
 // Contact form: swap to thank-you panel on submit
@@ -449,6 +742,52 @@ document.getElementById('cc-form').addEventListener('submit', function (e) {
   this.style.display = 'none';
   document.getElementById('cc-form-done').style.display = 'block';
 });
+
+// Intro reveal: dismiss after animation, once per session
+(function () {
+  var intro = document.getElementById('cc-intro');
+  if (!intro || intro.style.display === 'none') return;
+  function done() {
+    intro.classList.add('done');
+    sessionStorage.setItem('ccIntroSeen', '1');
+    setTimeout(function () { intro.remove(); }, 700);
+  }
+  intro.addEventListener('click', done);
+  window.addEventListener('load', function () { setTimeout(done, 900); });
+  setTimeout(done, 2600);
+})();
+
+// Marquee: duplicate track content for a seamless loop
+(function () {
+  var track = document.getElementById('cc-marq-track');
+  if (track) track.appendChild(track.firstElementChild.cloneNode(true));
+})();
+
+// Gentle parallax on hero videos
+(function () {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var slots = document.querySelectorAll('#home .cc-vids > div');
+  if (!slots.length) return;
+  var speeds = [-0.07, 0.05];
+  window.addEventListener('scroll', function () {
+    var y = window.scrollY;
+    if (y > 1200) return;
+    slots.forEach(function (el, i) {
+      el.style.transform = 'translateY(' + (y * (speeds[i] || 0)).toFixed(1) + 'px)';
+    });
+  }, { passive: true });
+})();
+
+// Custom cursor over gallery cards and render strip
+(function () {
+  var cur = document.getElementById('cc-cursor');
+  if (!cur || !window.matchMedia('(hover:hover)').matches) return;
+  document.addEventListener('mousemove', function (e) {
+    cur.style.left = e.clientX + 'px';
+    cur.style.top = e.clientY + 'px';
+    cur.classList.toggle('on', !!(e.target.closest && e.target.closest('#cc-gallery .cc-proj, #cc-strip a')));
+  }, { passive: true });
+})();
 
 // Kick hero reels into playback — autoplay can stall on large files
 (function () {
