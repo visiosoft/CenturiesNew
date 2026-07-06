@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centuries Contracting — Renovation, Fit-Out &amp; Construction in Dubai</title>
+<meta name="description" content="Renovation, fit-out and landscaping for villas, showrooms and workspaces in Dubai — one accountable team, permit-ready, finished to the day.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<style>
+/* Archivo */
+@font-face { font-family:'Archivo'; font-style:normal; font-weight:300 700; font-stretch:100%; font-display:swap; src:url("assets/fonts/archivo-vietnamese.woff2") format('woff2'); unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
+@font-face { font-family:'Archivo'; font-style:normal; font-weight:300 700; font-stretch:100%; font-display:swap; src:url("assets/fonts/archivo-latin-ext.woff2") format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Archivo'; font-style:normal; font-weight:300 700; font-stretch:100%; font-display:swap; src:url("assets/fonts/archivo-latin.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+/* Instrument Serif */
+@font-face { font-family:'Instrument Serif'; font-style:italic; font-weight:400; font-display:swap; src:url("assets/fonts/instrument-serif-italic-latin-ext.woff2") format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Instrument Serif'; font-style:italic; font-weight:400; font-display:swap; src:url("assets/fonts/instrument-serif-italic-latin.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family:'Instrument Serif'; font-style:normal; font-weight:400; font-display:swap; src:url("assets/fonts/instrument-serif-latin-ext.woff2") format('woff2'); unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family:'Instrument Serif'; font-style:normal; font-weight:400; font-display:swap; src:url("assets/fonts/instrument-serif-latin.woff2") format('woff2'); unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+html, body { margin:0; padding:0; background:#F5F1E9; scroll-behavior:smooth; }
+* { box-sizing:border-box; }
+::selection { background:#12343C; color:#F5F1E9; }
+section[id]{ scroll-margin-top:82px; }
+@keyframes riseIn { from { opacity:0; transform:translateY(18px);} to { opacity:1; transform:none;} }
+.cc-navlink { position:relative; transition:color .3s; }
+.cc-navlink:hover { color:#12343C !important; }
+.cc-navlink::after { content:""; display:block; height:1.5px; background:#E4B62A; transform:scaleX(0); transform-origin:left; transition:transform .35s cubic-bezier(.2,.7,.2,1); margin-top:3px; }
+.cc-navlink:hover::after, .cc-navlink.cc-active::after { transform:scaleX(1); }
+.cc-navlink.cc-active { color:#12343C !important; }
+.cc-btn-dark:hover { background:#0E2A31 !important; }
+.cc-btn-line:hover { background:#12343C !important; color:#F5F1E9 !important; }
+.cc-serv:hover .cc-serv-n { color:#12343C; padding-left:12px; }
+.cc-serv:hover .cc-serv-i { color:#E4B62A; }
+.cc-proj img { transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+.cc-proj:hover img { transform:scale(1.05); }
+.cc-proj:hover .cc-proj-t { color:#0E2A31; }
+.cc-field { width:100%; font-family:'Archivo',sans-serif; font-size:15px; color:#12343C; background:transparent; border:0; border-bottom:1px solid rgba(18,52,60,.28); padding:14px 0; outline:none; transition:border-color .3s; }
+.cc-field::placeholder { color:#8b9698; }
+.cc-field:focus { border-color:#E4B62A; }
+select.cc-field { appearance:none; -webkit-appearance:none; cursor:pointer; }
+.cc-row:hover .cc-row-ic { background:#E4B62A; color:#12343C; }
+/* Project gallery */
+.cc-proj { cursor:pointer; }
+.cc-proj .cc-proj-count { opacity:0; transition:opacity .35s; }
+.cc-proj:hover .cc-proj-count { opacity:1; }
+#cc-lightbox { position:fixed; inset:0; z-index:100; background:rgba(14,42,49,.96); display:none; flex-direction:column; }
+#cc-lightbox.open { display:flex; }
+#cc-lightbox .lb-top { display:flex; justify-content:space-between; align-items:center; padding:22px 32px; color:#F5F1E9; }
+#cc-lightbox .lb-title { font-family:'Instrument Serif',serif; font-size:24px; }
+#cc-lightbox .lb-cat { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B9C4C4; margin-left:16px; }
+#cc-lightbox .lb-close { background:none; border:1px solid rgba(245,241,233,.35); color:#F5F1E9; font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:.16em; text-transform:uppercase; padding:10px 18px; border-radius:2px; cursor:pointer; transition:background .3s,color .3s; }
+#cc-lightbox .lb-close:hover { background:#F5F1E9; color:#12343C; }
+#cc-lightbox .lb-stage { flex:1; display:flex; align-items:center; justify-content:center; min-height:0; padding:0 84px; }
+#cc-lightbox .lb-stage img { max-width:100%; max-height:100%; object-fit:contain; border-radius:2px; }
+#cc-lightbox .lb-nav { position:absolute; top:50%; transform:translateY(-50%); width:52px; height:52px; border-radius:50%; border:1px solid rgba(245,241,233,.35); background:rgba(14,42,49,.5); color:#F5F1E9; font-size:20px; cursor:pointer; transition:background .3s,color .3s; }
+#cc-lightbox .lb-nav:hover { background:#E4B62A; color:#12343C; border-color:#E4B62A; }
+#cc-lightbox .lb-prev { left:20px; }
+#cc-lightbox .lb-next { right:20px; }
+#cc-lightbox .lb-count { text-align:center; color:#B9C4C4; font-size:12px; letter-spacing:.16em; padding:18px; }
+@media (max-width:1200px){ .cc-gallerygrid{ grid-template-columns:repeat(2,1fr) !important; } }
+@media (max-width:900px){
+  .cc-nav-links{ display:none !important; }
+  .cc-pad{ padding-left:22px !important; padding-right:22px !important; }
+  .cc-hero{ grid-template-columns:1fr !important; }
+  .cc-vids{ height:520px !important; }
+  .cc-two{ grid-template-columns:1fr !important; gap:36px !important; }
+  .cc-three{ grid-template-columns:1fr !important; gap:36px !important; }
+  .cc-projgrid, .cc-servgrid, .cc-vals, .cc-frow, .cc-gallerygrid{ grid-template-columns:1fr !important; }
+  .cc-h1{ font-size:60px !important; }
+  .cc-h{ font-size:52px !important; }
+  #cc-lightbox .lb-stage{ padding:0 16px; }
+  #cc-lightbox .lb-nav{ width:42px; height:42px; }
+}
+</style>
+</head>
+<body>
+
+<div style="font-family:'Archivo',sans-serif; color:#12343C; background:#F5F1E9; overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div style="position:sticky; top:0; z-index:60; background:rgba(245,241,233,.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(18,52,60,.12);">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:0 40px; height:82px; display:flex; align-items:center; justify-content:space-between;">
+      <a href="#home" style="display:flex; align-items:center;"><img src="assets/logo.png" alt="Centuries Contracting" style="height:38px; width:auto; display:block;"></a>
+      <nav class="cc-nav-links" style="display:flex; gap:44px;">
+        <a class="cc-navlink cc-nav-services" href="#services" style="text-decoration:none; color:#4B5B5E; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">Services</a>
+        <a class="cc-navlink cc-nav-projects" href="#projects" style="text-decoration:none; color:#4B5B5E; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">Projects</a>
+        <a class="cc-navlink cc-nav-about" href="#about" style="text-decoration:none; color:#4B5B5E; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">About</a>
+        <a class="cc-navlink cc-nav-contact" href="#contact" style="text-decoration:none; color:#4B5B5E; font-size:12px; letter-spacing:.16em; text-transform:uppercase;">Contact</a>
+      </nav>
+      <a class="cc-btn-dark" href="#contact" style="text-decoration:none; background:#12343C; color:#F5F1E9; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; padding:13px 22px; border-radius:2px; transition:background .3s;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="cc-pad" style="max-width:1360px; margin:0 auto; padding:0 40px;">
+    <div class="cc-hero" style="display:grid; grid-template-columns:1fr 0.92fr; gap:24px; align-items:center; min-height:calc(100vh - 82px); padding:40px 0 60px;">
+      <div style="animation:riseIn .9s cubic-bezier(.2,.7,.2,1) both;">
+        <span style="display:inline-flex; align-items:center; gap:10px; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:#4B5B5E;"><span style="width:26px; height:2px; background:#E4B62A;"></span>Interiors &amp; construction — Dubai</span>
+        <h1 class="cc-h1" style="font-family:'Instrument Serif',serif; font-weight:400; font-size:92px; line-height:.98; letter-spacing:-.02em; color:#12343C; margin:26px 0 0; max-width:12ch;">Built to last a <span style="font-style:italic; color:#12343C; position:relative;">century<span style="position:absolute; left:2%; right:2%; bottom:.06em; height:.09em; background:#E4B62A; border-radius:2px;"></span></span>.</h1>
+        <p style="font-size:16.5px; line-height:1.7; color:#4B5B5E; margin:30px 0 0; max-width:40ch;">Renovation, fit-out and landscaping for villas, showrooms and workspaces — one accountable team, permit-ready, finished to the day.</p>
+        <div style="display:flex; gap:14px; margin-top:38px; flex-wrap:wrap;">
+          <a class="cc-btn-dark" href="#projects" style="text-decoration:none; background:#12343C; color:#F5F1E9; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; padding:16px 28px; border-radius:2px; transition:background .3s;">View Portfolio</a>
+          <a class="cc-btn-line" href="#contact" style="text-decoration:none; color:#12343C; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; padding:16px 28px; border:1px solid rgba(18,52,60,.25); border-radius:2px; transition:background .3s,color .3s;">Request a Quote</a>
+        </div>
+        <div style="display:flex; gap:44px; margin-top:56px;">
+          <div><div style="font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#12343C;">9</div><div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; margin-top:6px;">Years</div></div>
+          <div><div style="font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#12343C;">50<span style="color:#E4B62A;">+</span></div><div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; margin-top:6px;">Projects</div></div>
+          <div><div style="font-family:'Instrument Serif',serif; font-size:44px; line-height:1; color:#12343C;">100<span style="color:#E4B62A;">%</span></div><div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; margin-top:6px;">In-house</div></div>
+        </div>
+      </div>
+
+      <!-- TWO VERTICAL VIDEOS, feathered -->
+      <div class="cc-vids" style="position:relative; height:620px;">
+        <div style="position:absolute; left:0; top:0; width:280px; height:490px; overflow:hidden; -webkit-mask-image:radial-gradient(135% 120% at 50% 45%, #000 54%, transparent 92%); mask-image:radial-gradient(135% 120% at 50% 45%, #000 54%, transparent 92%);">
+          <video src="uploads/1st%20Reel.mp4" poster="assets/hero-poster-1.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+        </div>
+        <div style="position:absolute; right:0; top:130px; width:280px; height:490px; overflow:hidden; -webkit-mask-image:radial-gradient(135% 120% at 50% 55%, #000 54%, transparent 92%); mask-image:radial-gradient(135% 120% at 50% 55%, #000 54%, transparent 92%);">
+          <video src="uploads/reel-2.mp4" poster="assets/hero-poster-2.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+        </div>
+        <span style="position:absolute; right:0; bottom:96px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">Arabian Ranches — Showreel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section style="background:#12343C; color:#F5F1E9;">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:96px 40px;">
+      <div class="cc-two" style="display:grid; grid-template-columns:1.15fr 1fr; gap:70px; align-items:end;">
+        <p style="font-family:'Instrument Serif',serif; font-weight:400; font-size:42px; line-height:1.24; letter-spacing:-.01em; margin:0; max-width:20ch;">Nine years turning raw shells and tired interiors into precise, permit-ready spaces.</p>
+        <p style="font-size:15px; line-height:1.8; color:#B9C4C4; margin:0;">We keep the whole chain in-house — design coordination, RTA, DM and Civil Defence approvals, structure, MEP, joinery and finishing. One accountable team, one timeline, one standard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; border-bottom:1px solid rgba(18,52,60,.14); padding-bottom:26px;">
+      <div>
+        <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">What we do</span>
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:50px; line-height:1; letter-spacing:-.01em; color:#12343C; margin:16px 0 0;">Capabilities</h2>
+      </div>
+      <a class="cc-navlink" href="#contact" style="text-decoration:none; color:#4B5B5E; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;">Start a project →</a>
+    </div>
+    <div class="cc-servgrid" style="display:grid; grid-template-columns:1fr 1fr; gap:0 64px; margin-top:8px;">
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">01</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Renovation</span>
+      </a>
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">02</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Interior Fit-Out</span>
+      </a>
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">03</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Landscaping</span>
+      </a>
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">04</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Showroom Building</span>
+      </a>
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">05</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Garage Building</span>
+      </a>
+      <a class="cc-serv" href="#contact" style="text-decoration:none; color:inherit; display:grid; grid-template-columns:52px 1fr; gap:18px; align-items:center; padding:26px 0; border-bottom:1px solid rgba(18,52,60,.12);">
+        <span class="cc-serv-i" style="font-family:'Instrument Serif',serif; font-size:17px; color:#7A8688; transition:color .3s;">06</span>
+        <span class="cc-serv-n" style="font-family:'Instrument Serif',serif; font-size:34px; color:#12343C; transition:color .3s,padding .3s;">Authority Approvals</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK / PROJECTS -->
+  <section id="projects" style="background:#ECE6D9; border-top:1px solid rgba(18,52,60,.1); border-bottom:1px solid rgba(18,52,60,.1);">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px; margin-bottom:44px;">
+        <div>
+          <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">Selected work</span>
+          <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:50px; line-height:1; letter-spacing:-.01em; color:#12343C; margin:16px 0 0;">Recent projects</h2>
+        </div>
+        <a class="cc-navlink" href="#contact" style="text-decoration:none; color:#4B5B5E; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;">Enquire →</a>
+      </div>
+      <div id="cc-gallery" class="cc-gallerygrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:36px 24px;"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px 0;">
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; border-bottom:1px solid rgba(18,52,60,.14); padding-bottom:26px;">
+      <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">About</span>
+      <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">Since 2017 · Dubai</span>
+    </div>
+    <h2 class="cc-h" style="font-family:'Instrument Serif',serif; font-weight:400; font-size:76px; line-height:.99; letter-spacing:-.015em; margin:44px 0 0; max-width:17ch;">A contractor that treats your project like <span style="font-style:italic; color:#B08A12;">its own address</span>.</h2>
+    <div class="cc-two" style="display:grid; grid-template-columns:1fr 1fr; gap:70px; margin-top:56px; align-items:start;">
+      <div>
+        <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">Our story</span>
+        <p style="font-family:'Instrument Serif',serif; font-weight:400; font-size:32px; line-height:1.3; letter-spacing:-.01em; margin:22px 0 0;">We started in 2017 with a simple promise: run a clean, honest site and hand over work you&rsquo;d be proud to live or trade in.</p>
+      </div>
+      <div>
+        <p style="font-size:15px; line-height:1.8; color:#4B5B5E; margin:0 0 20px;">Nine years on, that hasn&rsquo;t changed. Centuries Contracting has grown into a full-service studio delivering renovation, fit-out, landscaping and turnkey construction across Dubai — but the same principle runs through every job.</p>
+        <p style="font-size:15px; line-height:1.8; color:#4B5B5E; margin:0;">We keep the whole chain in-house: design coordination, RTA, DM and Civil Defence approvals, structure, MEP, joinery and finishing. That means one accountable team, one timeline and no finger-pointing between subcontractors.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section style="background:#12343C; color:#F5F1E9; margin-top:100px;">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:100px 40px;">
+      <div class="cc-vals" style="display:grid; grid-template-columns:repeat(4,1fr); gap:28px;">
+        <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">9</div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Years in business</div>
+        </div>
+        <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">50<span style="color:#E4B62A;">+</span></div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Projects completed</div>
+        </div>
+        <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">100<span style="color:#E4B62A;">%</span></div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">In-house delivery</div>
+        </div>
+        <div style="border-top:1px solid rgba(243,239,233,.2); padding-top:22px;">
+          <div style="font-family:'Instrument Serif',serif; font-size:72px; line-height:1;">6</div>
+          <div style="font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B9C4C4; margin-top:10px;">Core disciplines</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+    <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">What we hold to</span>
+    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:52px; letter-spacing:-.01em; margin:18px 0 60px;">Four things we don&rsquo;t compromise on.</h2>
+    <div class="cc-vals" style="display:grid; grid-template-columns:repeat(4,1fr); gap:28px;">
+      <div style="border-top:1px solid rgba(18,52,60,.24); padding-top:22px;">
+        <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#B08A12;">01</div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; margin:14px 0 10px;">One accountable team</h3>
+        <p style="font-size:14px; line-height:1.7; color:#4B5B5E; margin:0;">No hand-offs between strangers. The people who quote the job are the people who finish it.</p>
+      </div>
+      <div style="border-top:1px solid rgba(18,52,60,.24); padding-top:22px;">
+        <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#B08A12;">02</div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; margin:14px 0 10px;">Permit-ready always</h3>
+        <p style="font-size:14px; line-height:1.7; color:#4B5B5E; margin:0;">RTA, DM and Civil Defence handled properly — so nothing gets torn out at inspection.</p>
+      </div>
+      <div style="border-top:1px solid rgba(18,52,60,.24); padding-top:22px;">
+        <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#B08A12;">03</div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; margin:14px 0 10px;">Clean sites</h3>
+        <p style="font-size:14px; line-height:1.7; color:#4B5B5E; margin:0;">A tidy site is a safe, faster, higher-quality site. We run ours that way, every day.</p>
+      </div>
+      <div style="border-top:1px solid rgba(18,52,60,.24); padding-top:22px;">
+        <div style="font-family:'Instrument Serif',serif; font-size:20px; color:#B08A12;">04</div>
+        <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:27px; margin:14px 0 10px;">Fixed, honest pricing</h3>
+        <p style="font-size:14px; line-height:1.7; color:#4B5B5E; margin:0;">A clear proposal up front and no invented extras later. What we quote is what you pay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background:#ECE6D9; border-top:1px solid rgba(18,52,60,.1);">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:120px 40px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px; border-bottom:1px solid rgba(18,52,60,.14); padding-bottom:26px;">
+        <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">Contact</span>
+        <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">Dubai, UAE</span>
+      </div>
+      <h2 class="cc-h" style="font-family:'Instrument Serif',serif; font-weight:400; font-size:76px; line-height:.99; letter-spacing:-.02em; margin:44px 0 0; max-width:15ch;">Let&rsquo;s talk about <span style="font-style:italic;">your space</span>.</h2>
+      <p style="font-size:17px; line-height:1.7; color:#4B5B5E; max-width:52ch; margin:30px 0 70px;">Send a few photos and a line about what you need. We&rsquo;ll come back with a clear next step — usually within one working day.</p>
+
+      <div class="cc-two" style="display:grid; grid-template-columns:1fr 1.1fr; gap:80px; align-items:start;">
+        <!-- details -->
+        <div>
+          <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">Direct</span>
+          <div style="margin-top:24px;">
+            <a class="cc-row" href="tel:+971567601154" style="text-decoration:none; color:inherit; display:flex; gap:18px; align-items:center; padding:22px 0; border-top:1px solid rgba(18,52,60,.14);">
+              <span class="cc-row-ic" style="width:44px; height:44px; border-radius:2px; background:#12343C; color:#F5F1E9; display:flex; align-items:center; justify-content:center; flex:0 0 auto; transition:.3s; font-family:'Instrument Serif',serif; font-size:20px;">T</span>
+              <span><span style="display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688;">Phone / WhatsApp</span><span style="display:block; font-size:19px; margin-top:3px;">+971 56 760 1154</span></span>
+            </a>
+            <a class="cc-row" href="mailto:info@centuriescontracting.com" style="text-decoration:none; color:inherit; display:flex; gap:18px; align-items:center; padding:22px 0; border-top:1px solid rgba(18,52,60,.14);">
+              <span class="cc-row-ic" style="width:44px; height:44px; border-radius:2px; background:#12343C; color:#F5F1E9; display:flex; align-items:center; justify-content:center; flex:0 0 auto; transition:.3s; font-family:'Instrument Serif',serif; font-size:20px;">@</span>
+              <span><span style="display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688;">Email</span><span style="display:block; font-size:19px; margin-top:3px;">info@centuriescontracting.com</span></span>
+            </a>
+            <a class="cc-row" href="https://www.centuriescontracting.com" style="text-decoration:none; color:inherit; display:flex; gap:18px; align-items:center; padding:22px 0; border-top:1px solid rgba(18,52,60,.14); border-bottom:1px solid rgba(18,52,60,.14);">
+              <span class="cc-row-ic" style="width:44px; height:44px; border-radius:2px; background:#12343C; color:#F5F1E9; display:flex; align-items:center; justify-content:center; flex:0 0 auto; transition:.3s; font-family:'Instrument Serif',serif; font-size:20px;">W</span>
+              <span><span style="display:block; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688;">Website</span><span style="display:block; font-size:19px; margin-top:3px;">www.centuriescontracting.com</span></span>
+            </a>
+          </div>
+          <div style="margin-top:34px; display:flex; gap:44px;">
+            <div><div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688;">Sun–Thu</div><div style="font-family:'Instrument Serif',serif; font-size:26px; margin-top:6px;">8:30 – 18:00</div></div>
+            <div><div style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688;">Sat</div><div style="font-family:'Instrument Serif',serif; font-size:26px; margin-top:6px;">By appointment</div></div>
+          </div>
+        </div>
+
+        <!-- form -->
+        <div style="background:#ffffff; border:1px solid rgba(18,52,60,.12); border-radius:4px; padding:44px;">
+          <div id="cc-form-done" style="display:none; text-align:center; padding:60px 20px;">
+            <div style="width:60px; height:60px; border-radius:50%; background:#E4B62A; color:#12343C; display:flex; align-items:center; justify-content:center; margin:0 auto; font-family:'Instrument Serif',serif; font-size:32px;">✓</div>
+            <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:36px; margin:24px 0 10px; color:#12343C;">Thank you.</h3>
+            <p style="font-size:15px; line-height:1.7; color:#4B5B5E; max-width:34ch; margin:0 auto;">Your enquiry has reached us. We&rsquo;ll be in touch within one working day.</p>
+          </div>
+          <form id="cc-form">
+            <span style="font-size:11.5px; letter-spacing:.2em; text-transform:uppercase; color:#B08A12;">Request a quote</span>
+            <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:32px; margin:12px 0 30px; color:#12343C;">Tell us about the project</h3>
+            <div class="cc-frow" style="display:grid; grid-template-columns:1fr 1fr; gap:26px;">
+              <input class="cc-field" type="text" name="name" placeholder="Full name">
+              <input class="cc-field" type="tel" name="phone" placeholder="Phone / WhatsApp">
+            </div>
+            <div style="margin-top:26px;"><input class="cc-field" type="email" name="email" placeholder="Email address"></div>
+            <div style="margin-top:26px;">
+              <select class="cc-field" name="service">
+                <option value="">Service needed…</option>
+                <option>Renovation</option>
+                <option>Interior Fit-Out</option>
+                <option>Landscaping</option>
+                <option>Showroom Building</option>
+                <option>Garage Building</option>
+                <option>Authority Approvals</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div style="margin-top:26px;"><textarea class="cc-field" name="message" rows="4" placeholder="Tell us about your space, timeline and budget"></textarea></div>
+            <button type="submit" class="cc-btn-dark" style="margin-top:32px; width:100%; background:#12343C; color:#F5F1E9; font-family:'Archivo'; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; padding:18px; border:0; border-radius:2px; cursor:pointer; transition:background .3s;">Send enquiry</button>
+            <p style="font-size:12px; color:#7A8688; margin:18px 0 0; text-align:center;">Prefer to chat? WhatsApp us at +971 56 760 1154.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background:#0E2A31; color:#F5F1E9;">
+    <div class="cc-pad" style="max-width:1360px; margin:0 auto; padding:80px 40px 40px;">
+      <div class="cc-three" style="display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:56px; padding-bottom:56px; border-bottom:1px solid rgba(245,241,233,.14);">
+        <div>
+          <img src="assets/logo.png" alt="Centuries Contracting" style="height:40px; width:auto; filter:brightness(0) invert(1); opacity:.92;">
+          <p style="font-size:14px; line-height:1.7; color:#93A2A2; max-width:34ch; margin:22px 0 0;">Renovation, fit-out and turnkey construction across Dubai — built to last.</p>
+        </div>
+        <div>
+          <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#E4B62A; margin-bottom:18px;">Explore</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a class="cc-navlink" href="#services" style="text-decoration:none; color:#B9C4C4; font-size:14px;">Services</a>
+            <a class="cc-navlink" href="#projects" style="text-decoration:none; color:#B9C4C4; font-size:14px;">Projects</a>
+            <a class="cc-navlink" href="#about" style="text-decoration:none; color:#B9C4C4; font-size:14px;">About</a>
+            <a class="cc-navlink" href="#contact" style="text-decoration:none; color:#B9C4C4; font-size:14px;">Contact</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#E4B62A; margin-bottom:18px;">Get in touch</div>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            <a class="cc-navlink" href="tel:+971567601154" style="text-decoration:none; color:#B9C4C4; font-size:14px;">+971 56 760 1154</a>
+            <a class="cc-navlink" href="mailto:info@centuriescontracting.com" style="text-decoration:none; color:#B9C4C4; font-size:14px;">info@centuriescontracting.com</a>
+            <a class="cc-navlink" href="https://www.centuriescontracting.com" style="text-decoration:none; color:#B9C4C4; font-size:14px;">www.centuriescontracting.com</a>
+            <span style="color:#B9C4C4; font-size:14px;">Dubai, United Arab Emirates</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; padding-top:26px; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:#7A8688;">
+        <span>© 2026 Centuries Contracting L.L.C</span>
+        <span>Licensed &amp; RTA / DM approved contractor</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="cc-lightbox" role="dialog" aria-modal="true" aria-label="Project gallery">
+  <div class="lb-top">
+    <div><span class="lb-title"></span><span class="lb-cat"></span></div>
+    <button type="button" class="lb-close">Close ✕</button>
+  </div>
+  <div class="lb-stage"><img alt=""></div>
+  <button type="button" class="lb-nav lb-prev" aria-label="Previous photo">←</button>
+  <button type="button" class="lb-nav lb-next" aria-label="Next photo">→</button>
+  <div class="lb-count"></div>
+</div>
+
+<script src="assets/projects-data.js"></script>
+<script>
+// Project gallery from projects/ folder + lightbox
+(function () {
+  var grid = document.getElementById('cc-gallery');
+  var lb = document.getElementById('cc-lightbox');
+  var lbImg = lb.querySelector('.lb-stage img');
+  var lbTitle = lb.querySelector('.lb-title');
+  var lbCat = lb.querySelector('.lb-cat');
+  var lbCount = lb.querySelector('.lb-count');
+  var cur = { p: 0, i: 0 };
+
+  (window.CC_PROJECTS || []).forEach(function (p, pi) {
+    var card = document.createElement('a');
+    card.className = 'cc-proj';
+    card.href = '#';
+    card.style.cssText = 'text-decoration:none; color:inherit; display:block;';
+    card.innerHTML =
+      '<div style="height:320px; border-radius:3px; overflow:hidden; background:#d8d0bf; position:relative;">' +
+        '<img loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">' +
+        '<span class="cc-proj-count" style="position:absolute; right:12px; bottom:12px; background:rgba(14,42,49,.78); color:#F5F1E9; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:7px 12px; border-radius:2px;">View ' + p.images.length + ' photos</span>' +
+      '</div>' +
+      '<div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:14px;">' +
+        '<span class="cc-proj-t" style="font-family:\'Instrument Serif\',serif; font-size:23px; transition:color .3s;"></span>' +
+        '<span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; flex:0 0 auto;"></span>' +
+      '</div>';
+    var img = card.querySelector('img');
+    img.src = encodeURI(p.images[0]);
+    img.alt = p.title;
+    card.querySelector('.cc-proj-t').textContent = p.title;
+    card.querySelector('div + div span:last-child').textContent = p.category;
+    card.addEventListener('click', function (e) { e.preventDefault(); open(pi, 0); });
+    grid.appendChild(card);
+  });
+
+  function show() {
+    var p = window.CC_PROJECTS[cur.p];
+    lbImg.src = encodeURI(p.images[cur.i]);
+    lbImg.alt = p.title + ' — photo ' + (cur.i + 1);
+    lbTitle.textContent = p.title;
+    lbCat.textContent = p.category;
+    lbCount.textContent = (cur.i + 1) + ' / ' + p.images.length;
+  }
+  function open(pi, ii) {
+    cur = { p: pi, i: ii };
+    show();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
+  function step(d) {
+    var n = window.CC_PROJECTS[cur.p].images.length;
+    cur.i = (cur.i + d + n) % n;
+    show();
+  }
+  lb.querySelector('.lb-close').addEventListener('click', close);
+  lb.querySelector('.lb-prev').addEventListener('click', function () { step(-1); });
+  lb.querySelector('.lb-next').addEventListener('click', function () { step(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+})();
+
+// Contact form: swap to thank-you panel on submit
+document.getElementById('cc-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('cc-form-done').style.display = 'block';
+});
+
+// Kick hero reels into playback — autoplay can stall on large files
+(function () {
+  function playAll() {
+    document.querySelectorAll('.cc-vids video').forEach(function (v) {
+      v.muted = true;
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    });
+  }
+  playAll();
+  window.addEventListener('load', playAll);
+  document.addEventListener('pointerdown', playAll, { once: true });
+  document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') playAll();
+  });
+})();
+
+// Nav link highlight for the section in view
+(function () {
+  var map = { services: '.cc-nav-services', projects: '.cc-nav-projects', about: '.cc-nav-about', contact: '.cc-nav-contact' };
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting && map[en.target.id]) {
+        Object.values(map).forEach(function (sel) {
+          var el = document.querySelector(sel);
+          if (el) el.classList.remove('cc-active');
+        });
+        var link = document.querySelector(map[en.target.id]);
+        if (link) link.classList.add('cc-active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  Object.keys(map).forEach(function (id) {
+    var s = document.getElementById(id);
+    if (s) io.observe(s);
+  });
+})();
+</script>
+
+</body>
+</html>
