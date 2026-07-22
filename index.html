@@ -188,13 +188,13 @@ body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:n
         </div>
       </div>
 
-      <!-- TWO VERTICAL VIDEOS, feathered -->
+      <!-- TWO VERTICAL VIDEOS, feathered — lazy loaded -->
       <div class="cc-vids" style="position:relative; height:620px;">
         <div style="position:absolute; left:0; top:0; width:280px; height:490px; overflow:hidden; -webkit-mask-image:radial-gradient(135% 120% at 50% 45%, #000 54%, transparent 92%); mask-image:radial-gradient(135% 120% at 50% 45%, #000 54%, transparent 92%);">
-          <video src="uploads/1st%20Reel.mp4" poster="assets/hero-poster-1.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+          <video data-src="uploads/1st%20Reel.mp4" poster="assets/hero-poster-1.jpg" muted loop playsinline preload="none" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
         </div>
         <div style="position:absolute; right:0; top:130px; width:280px; height:490px; overflow:hidden; -webkit-mask-image:radial-gradient(135% 120% at 50% 55%, #000 54%, transparent 92%); mask-image:radial-gradient(135% 120% at 50% 55%, #000 54%, transparent 92%);">
-          <video src="uploads/reel-2.mp4" poster="assets/hero-poster-2.jpg" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+          <video data-src="uploads/reel-2.mp4" poster="assets/hero-poster-2.jpg" muted loop playsinline preload="none" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
         </div>
         <span style="position:absolute; right:0; bottom:96px; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:#7A8688;">Arabian Ranches — Showreel</span>
       </div>
@@ -314,7 +314,7 @@ body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:n
         </div>
         <div class="cc-vids" style="position:relative; height:640px;">
           <div style="position:absolute; inset:0; overflow:hidden; border-radius:3px;">
-            <video src="projects/Arabian%20Ranches/2nd%20Reel%20SHORT.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
+            <video data-src="projects/Arabian%20Ranches/2nd%20Reel%20SHORT.mp4" muted loop playsinline preload="none" style="width:100%; height:100%; object-fit:cover; display:block;"></video>
           </div>
           <span style="position:absolute; left:16px; bottom:16px; background:rgba(14,42,49,.78); font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:#F5F1E9; padding:8px 13px; border-radius:2px;">On site — Arabian Ranches</span>
         </div>
@@ -640,7 +640,7 @@ body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:n
     card.style.cssText = 'text-decoration:none; color:inherit; display:block;';
     card.innerHTML =
       '<div style="height:320px; border-radius:3px; overflow:hidden; background:#d8d0bf; position:relative;">' +
-        '<img loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block;">' +
+        '<img data-lazy style="width:100%; height:100%; object-fit:cover; display:block;">' +
         '<span class="cc-proj-count" style="position:absolute; right:12px; bottom:12px; background:rgba(14,42,49,.78); color:#F5F1E9; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; padding:7px 12px; border-radius:2px;">' + badge + '</span>' +
       '</div>' +
       '<div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-top:14px;">' +
@@ -648,7 +648,7 @@ body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:n
         '<span style="font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#7A8688; flex:0 0 auto;"></span>' +
       '</div>';
     var img = card.querySelector('img');
-    img.src = encodeURI(p.media[0].src);
+    img.dataset.src = encodeURI(p.media[0].src);
     img.alt = p.title;
     card.querySelector('.cc-proj-t').textContent = p.title;
     card.querySelector('div + div span:last-child').textContent = p.category;
@@ -717,8 +717,8 @@ body::after { content:""; position:fixed; inset:0; z-index:998; pointer-events:n
       projects[0].media.some(function (m, i) { if (m.src === src) { idx = i; return true; } return false; });
       var a = document.createElement('a');
       a.href = '#';
-      a.innerHTML = '<img loading="lazy" alt="3D interior render">';
-      a.querySelector('img').src = encodeURI(src);
+      a.innerHTML = '<img data-lazy alt="3D interior render">';
+      a.querySelector('img').dataset.src = encodeURI(src);
       a.addEventListener('click', function (e) {
         e.preventDefault();
         if (idx >= 0) open(0, idx);
@@ -815,20 +815,57 @@ document.getElementById('cc-form').addEventListener('submit', function (e) {
   }, { passive: true });
 })();
 
-// Kick hero reels into playback — autoplay can stall on large files
+// Lazy load: images with data-src and videos with data-src
 (function () {
-  function playAll() {
-    document.querySelectorAll('.cc-vids video').forEach(function (v) {
-      v.muted = true;
-      var p = v.play();
-      if (p && p.catch) p.catch(function () {});
+  var imgObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting) return;
+      var el = en.target;
+      if (el.dataset.src) {
+        el.src = el.dataset.src;
+        delete el.dataset.src;
+      }
+      imgObs.unobserve(el);
     });
+  }, { rootMargin: '200px 0px' });
+  document.querySelectorAll('img[data-src], img[data-lazy]').forEach(function (img) {
+    if (img.dataset.src) imgObs.observe(img);
+  });
+  // re-observe gallery images after filter chip click
+  var origChipHandler = null;
+  var filters = document.getElementById('cc-filters');
+  if (filters) {
+    new MutationObserver(function () {
+      document.querySelectorAll('img[data-src]').forEach(function (img) { imgObs.observe(img); });
+    }).observe(filters, { subtree: true, attributes: true, attributeFilter: ['class'] });
   }
-  playAll();
-  window.addEventListener('load', playAll);
-  document.addEventListener('pointerdown', playAll, { once: true });
+
+  // Lazy load videos: load src when near viewport, autoplay when visible
+  var vidObs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      var v = en.target;
+      if (en.isIntersecting) {
+        if (v.dataset.src && !v.src) {
+          v.src = v.dataset.src;
+          v.load();
+        }
+        v.muted = true;
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+      } else {
+        if (v.src) v.pause();
+      }
+    });
+  }, { rootMargin: '300px 0px', threshold: 0.1 });
+  document.querySelectorAll('video[data-src]').forEach(function (v) { vidObs.observe(v); });
+
+  // Resume playback when tab becomes visible again
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'visible') playAll();
+    if (document.visibilityState === 'visible') {
+      document.querySelectorAll('video[data-src]').forEach(function (v) {
+        if (v.src) { v.muted = true; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      });
+    }
   });
 })();
 
